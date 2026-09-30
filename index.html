@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <!--
+      interactive-widget=resizes-content: saat keyboard layar muncul (menulis catatan),
+      area tata letak menyusut sehingga sheet catatan tetap terlihat di atas keyboard.
+    -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content"
+    />
+    <meta name="theme-color" content="#f5f5f4" />
+    <meta name="description" content="Pembaca ebook EPUB & PDF dengan Text-to-Speech, subtitle terjemahan, sorotan, dan catatan — bisa dipakai tanpa internet." />
+
+    <!-- PWA (Fase 3): manifest + ikon + metadata aplikasi terpasang. -->
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Pocket Reader" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <!--
+      Skrip boot tema: menerapkan tema tersimpan SEBELUM render pertama, supaya pengguna
+      tema gelap/sepia tidak melihat kilatan terang tiap membuka aplikasi. Membaca kunci
+      yang SAMA dengan settings/AppSettings.ts (APP_SETTINGS_STORAGE_KEY) dan warna yang
+      sama dengan ThemeController.ts (THEME_COLOR_META) — jaga sinkron bila salah satunya berubah.
+      Sengaja tanpa dependensi & dibungkus try/catch: kegagalan di sini tak boleh menghentikan aplikasi.
+    -->
+    <script>
+      try {
+        var stored = JSON.parse(localStorage.getItem("pocket-ebook-reader:app-settings:v1") || "{}");
+        var colors = { light: "#f5f5f4", dark: "#1c1c1c", sepia: "#ece1c8" };
+        var pref = stored && stored.theme;
+        // "system" → ikuti mode gelap/terang perangkat (sinkron dengan resolveTheme di ThemeController.ts).
+        if (pref === "system") {
+          pref = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        if (Object.prototype.hasOwnProperty.call(colors, pref)) {
+          document.documentElement.setAttribute("data-theme", pref);
+          document.querySelector('meta[name="theme-color"]').setAttribute("content", colors[pref]);
+        }
+      } catch (e) {
+        /* abaikan: aplikasi memulihkan tema sendiri setelah dimuat */
+      }
+    </script>
+    <title>Pocket Ebook Reader</title>
+    <script type="module" crossorigin src="./assets/index-DbF_XmzY.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Si3amNmh.css">
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>
