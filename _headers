@@ -1,0 +1,5 @@
+# Netlify / Cloudflare Pages: cross-origin isolation untuk ONNX Runtime multi-thread (Piper TTS).
+# Host lain (GitHub Pages tidak bisa mengatur header): lihat CATATAN-TTS-PIPER.md.
+/*
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: credentialless

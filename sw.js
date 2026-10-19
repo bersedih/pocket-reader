@@ -28,8 +28,8 @@
  */
 "use strict";
 
-const PRECACHE_MANIFEST = [{"url":"apple-touch-icon.png","revision":"a0398f206438"},{"url":"assets/TranslationWorker-CU4Ar0pg.js","revision":"b004a6fe3fea"},{"url":"assets/index-DbF_XmzY.js","revision":"dbf863d5d1c2"},{"url":"assets/index-Si3amNmh.css","revision":"06387eb4950d"},{"url":"assets/ort-wasm-simd-threaded.jsep-B0T3yYHD.wasm","revision":"c46655e8a94a"},{"url":"assets/pdf-onFs2SJT.js","revision":"aa42b5343f13"},{"url":"assets/pdf.worker-BgryrOlp.mjs","revision":"7c237f83fa56"},{"url":"favicon.svg","revision":"61bc9a161de5"},{"url":"icon-192.png","revision":"514356b39908"},{"url":"icon-512.png","revision":"3ecedcfb4320"},{"url":"icon-maskable-512.png","revision":"046a2275173f"},{"url":"icon.svg","revision":"3c0c811e1a00"},{"url":"icons.svg","revision":"b45fa506195c"},{"url":"index.html","revision":"89987d77b8d0"},{"url":"manifest.json","revision":"419c3bca7802"}];
-const BUILD_ID = "294836d78e17";
+const PRECACHE_MANIFEST = [{"url":"apple-touch-icon.png","revision":"a0398f206438"},{"url":"assets/PiperWorker-BCZTY6am.js","revision":"acc5f9c85094"},{"url":"assets/TranslationWorker-CU4Ar0pg.js","revision":"b004a6fe3fea"},{"url":"assets/index-B4RLjQEm.css","revision":"53d0f8fe1ba5"},{"url":"assets/index-CrZ5WTGg.js","revision":"0cacacd11738"},{"url":"assets/ort-wasm-simd-threaded.jsep-B0T3yYHD.wasm","revision":"c46655e8a94a"},{"url":"assets/pdf-CdRIksVP.js","revision":"ea74bd954b84"},{"url":"assets/pdf.worker-BgryrOlp.mjs","revision":"7c237f83fa56"},{"url":"favicon.svg","revision":"61bc9a161de5"},{"url":"icon-192.png","revision":"514356b39908"},{"url":"icon-512.png","revision":"3ecedcfb4320"},{"url":"icon-maskable-512.png","revision":"046a2275173f"},{"url":"icon.svg","revision":"3c0c811e1a00"},{"url":"icons.svg","revision":"b45fa506195c"},{"url":"index.html","revision":"ceafce44a2cf"},{"url":"manifest.json","revision":"419c3bca7802"}];
+const BUILD_ID = "dfad356b71ee";
 
 // Awalan nama cache — dipakai UI penyimpanan (src/storage/StorageInfo.ts) untuk mengenali cache milik aplikasi ini.
 const PREFIX = "pocket-reader-";
